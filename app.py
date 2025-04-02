@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 conteudos = []
-@app.route('/')
+@app.route('/', methods = ["GET", "POST"])
 def principal(): 
     if request.method == 'POST':
         if request.form.get('conteudo'):
