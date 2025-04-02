@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notas da Turma</title>
 </head>
 <body>
-    <h2 style="text-align: center;">Notas da Turma</h2>
+    <h2 style="text-align: center;">Notas dos Alunos</h2>
     <hr>
     <form action="{{url_for('diario')}}" method="POST">
         <label>Aluno</label>
-        <input type="text" name="aluno" id="aluno" required>
+        <input type="text" name="aluno" required>
         <label>Nota</label>
-        <input type="text" name="nota" id="nota">
+        <input type="text" name="nota">
         <button>Adicionar</button>
     </form>
-        {% for d in diario %}
+        {% for registro in registros %}
         <details>
-            <summary>{{d.aluno}}</summary>
-            <p>{{d.nota}}</p>
+            <summary>{{registro.aluno}}</summary>
+            <p>{{registro.nota}}</p>
         </details>
-        {%endfor%}
+        {% endfor %}
 </body>
 </html>
-
-
